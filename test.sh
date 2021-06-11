@@ -35,7 +35,7 @@ sleep 3
 
 # kill the last follower and send 'create' command simultaneously
 # command should persist in zoo2 txn-log only (so, it's not commited)
-# to do so, command be sent after zoo1 is killed, but before zoo2 could realize it
+# to do so, command should be sent after zoo1 is killed, but before zoo2 could realize it
 # for this purpose, use SLEEP_TIME
 # 0.8s works on my PC, but may be you should tune it to reproduce the test by your own
 SLEEP_TIME=0.8
@@ -56,7 +56,7 @@ sudo docker-compose -f zookeeper_multi.yml up -d zoo1 zoo3
 
 # create node /test_node_2
 # zxid of this command and zxid of 'create /test_node_1' in zoo2 should be the same
-# because from some perspectives they are 'the first command in the same epoch'
+# because from some perspectives they are both 'the first command in the epoch 2'
 ./zk_cmd zoo1 create /test_node_2 y 2> /dev/null
 
 # return zoo2 back to the cluster
