@@ -1,0 +1,84 @@
+Stopping fsync-failures-in-consensus-solutions_zoo2_1 ... 
+Stopping fsync-failures-in-consensus-solutions_zoo1_1 ... 
+Stopping fsync-failures-in-consensus-solutions_zoo3_1 ... 
+Stopping fsync-failures-in-consensus-solutions_zoo3_1 ... done
+Stopping fsync-failures-in-consensus-solutions_zoo2_1 ... done
+Stopping fsync-failures-in-consensus-solutions_zoo1_1 ... done
+Removing fsync-failures-in-consensus-solutions_zoo2_1 ... 
+Removing fsync-failures-in-consensus-solutions_zoo1_1 ... 
+Removing fsync-failures-in-consensus-solutions_zoo3_1 ... 
+Removing fsync-failures-in-consensus-solutions_zoo3_1 ... done
+Removing fsync-failures-in-consensus-solutions_zoo1_1 ... done
+Removing fsync-failures-in-consensus-solutions_zoo2_1 ... done
+Removing network fsync-failures-in-consensus-solutions_default
+INFO:cuttlefs.cli:mounting /home/koval/diplom/fsync-failures-in-consensus-solutions/zoo1/data_faulty_underlying at /home/koval/diplom/fsync-failures-in-consensus-solutions/zoo1/data_faulty
+INFO:cuttlefs.cli:loading faultlist ./fault_list.json
+Building with native build. Learn about native build in Compose here: https://docs.docker.com/go/compose-native-build/
+Creating network "fsync-failures-in-consensus-solutions_default" with the default driver
+Creating fsync-failures-in-consensus-solutions_zoo1_1 ... 
+Creating fsync-failures-in-consensus-solutions_zoo3_1 ... 
+Creating fsync-failures-in-consensus-solutions_zoo2_1 ... 
+Creating fsync-failures-in-consensus-solutions_zoo3_1 ... done
+Creating fsync-failures-in-consensus-solutions_zoo1_1 ... done
+Creating fsync-failures-in-consensus-solutions_zoo2_1 ... done
+Node /random_node created
+zookeeper
+random_node
+
+zookeeper
+random_node
+
+zookeeper
+random_node
+
+Killing fsync-failures-in-consensus-solutions_zoo3_1 ... 
+Killing fsync-failures-in-consensus-solutions_zoo3_1 ... done
+Killing fsync-failures-in-consensus-solutions_zoo1_1 ... 
+2021-06-11 14:05:49,274:31970(0x7f43985a9740):ZOO_INFO@log_env@1250: Client environment:zookeeper.version=zookeeper C client 3.7.0
+2021-06-11 14:05:49,274:31970(0x7f43985a9740):ZOO_INFO@log_env@1254: Client environment:host.name=DESKTOP-1IK3KEK
+2021-06-11 14:05:49,274:31970(0x7f43985a9740):ZOO_INFO@log_env@1261: Client environment:os.name=Linux
+2021-06-11 14:05:49,274:31970(0x7f43985a9740):ZOO_INFO@log_env@1262: Client environment:os.arch=5.4.72-microsoft-standard-WSL2
+2021-06-11 14:05:49,274:31970(0x7f43985a9740):ZOO_INFO@log_env@1263: Client environment:os.version=#1 SMP Wed Oct 28 23:40:43 UTC 2020
+2021-06-11 14:05:49,274:31970(0x7f43985a9740):ZOO_INFO@log_env@1271: Client environment:user.name=(null)
+2021-06-11 14:05:49,274:31970(0x7f43985a9740):ZOO_INFO@log_env@1279: Client environment:user.home=/home/koval
+2021-06-11 14:05:49,274:31970(0x7f43985a9740):ZOO_INFO@log_env@1291: Client environment:user.dir=/home/koval/diplom/fsync-failures-in-consensus-solutions
+2021-06-11 14:05:49,274:31970(0x7f43985a9740):ZOO_INFO@zookeeper_init_internal@1335: Initiating client connection, host=localhost:2182 sessionTimeout=10000 watcher=0x55f6f8d83319 sessionId=0 sessionPasswd=<null> context=(nil) flags=0
+2021-06-11 14:05:49,275:31970(0x7f4398594700):ZOO_INFO@check_events@2988: initiated connection to server 127.0.0.1:2182
+2021-06-11 14:05:49,282:31970(0x7f4398594700):ZOO_INFO@finalize_session_establishment@2864: session establishment complete on server 127.0.0.1:2182, sessionId=0x2000219f7cf0000, negotiated timeout=10000 
+Connected in 7ms
+Starting create command...
+Killing fsync-failures-in-consensus-solutions_zoo1_1 ... done
+2021-06-11 14:05:49,490:31970(0x7f4398594700):ZOO_ERROR@handle_socket_error_msg@3007: Socket 127.0.0.1:2182 zk retcode=-4, errno=112(Host is down): failed while receiving a server response
+Failed to create node /test_node_1, code: -4
+./test.sh: line 42: 31970 Aborted                 ./zk_cmd zoo2 create /test_node_1 x
+Stopping fsync-failures-in-consensus-solutions_zoo2_1 ... 
+Stopping fsync-failures-in-consensus-solutions_zoo2_1 ... done
+Removing fsync-failures-in-consensus-solutions_zoo2_1 ... 
+Removing fsync-failures-in-consensus-solutions_zoo3_1 ... 
+Removing fsync-failures-in-consensus-solutions_zoo1_1 ... 
+Removing fsync-failures-in-consensus-solutions_zoo3_1 ... done
+Removing fsync-failures-in-consensus-solutions_zoo2_1 ... done
+Removing fsync-failures-in-consensus-solutions_zoo1_1 ... done
+Removing network fsync-failures-in-consensus-solutions_default
+Building with native build. Learn about native build in Compose here: https://docs.docker.com/go/compose-native-build/
+Creating network "fsync-failures-in-consensus-solutions_default" with the default driver
+Creating fsync-failures-in-consensus-solutions_zoo1_1 ... 
+Creating fsync-failures-in-consensus-solutions_zoo3_1 ... 
+Creating fsync-failures-in-consensus-solutions_zoo1_1 ... done
+Creating fsync-failures-in-consensus-solutions_zoo3_1 ... done
+Node /test_node_2 created
+Building with native build. Learn about native build in Compose here: https://docs.docker.com/go/compose-native-build/
+Creating fsync-failures-in-consensus-solutions_zoo2_1 ... 
+Creating fsync-failures-in-consensus-solutions_zoo2_1 ... done
+test_node_2
+zookeeper
+random_node
+
+test_node_1
+zookeeper
+random_node
+
+test_node_2
+zookeeper
+random_node
+

@@ -11,9 +11,10 @@ services:
     environment:
       ZOO_MY_ID: 1
       ZOO_SERVERS: server.1=zoo1:2888:3888;2181 server.2=zoo2:2888:3888;2181 server.3=zoo3:2888:3888;2181
+      ZOO_CFG_EXTRA: localSessionsEnabled=true
     volumes:
-      # - ./zoo1/data_faulty:/data:rw
-      - ./zoo1/data:/data:rw
+      - ./zoo1/data_faulty:/data:rw
+      # - ./zoo1/data:/data:rw
       - ./zoo1/datalog:/datalog:rw
     
   zoo2:
@@ -26,6 +27,7 @@ services:
     environment:
       ZOO_MY_ID: 2
       ZOO_SERVERS: server.1=zoo1:2888:3888;2181 server.2=zoo2:2888:3888;2181 server.3=zoo3:2888:3888;2181
+      ZOO_CFG_EXTRA: localSessionsEnabled=true
     volumes:
       - ./zoo2/data:/data:rw
       - ./zoo2/datalog:/datalog:rw
@@ -40,6 +42,7 @@ services:
     environment:
       ZOO_MY_ID: 3
       ZOO_SERVERS: server.1=zoo1:2888:3888;2181 server.2=zoo2:2888:3888;2181 server.3=zoo3:2888:3888;2181
+      ZOO_CFG_EXTRA: localSessionsEnabled=true
     volumes:
       - ./zoo3/data:/data:rw
       - ./zoo3/datalog:/datalog:rw

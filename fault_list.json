@@ -1,0 +1,12 @@
+[
+    {
+        "path": "/version-2/currentEpoch.tmp",
+        "seq": "wwxW",
+        "block": 0
+    },
+    {
+        "path": "/version-2/acceptedEpoch.tmp",
+        "seq": "wwxW",
+        "block": 0
+    }
+]
