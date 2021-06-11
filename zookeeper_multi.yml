@@ -2,7 +2,7 @@ version: '3.1'
 
 services:
   zoo1:
-    image: zookeeper
+    image: zookeeper:3.7.0
     restart: always
     hostname: zoo1
     ports:
@@ -18,7 +18,7 @@ services:
       - ./zoo1/datalog:/datalog:rw
     
   zoo2:
-    image: zookeeper
+    image: zookeeper:3.7.0
     restart: always
     hostname: zoo2
     ports:
@@ -33,7 +33,7 @@ services:
       - ./zoo2/datalog:/datalog:rw
 
   zoo3:
-    image: zookeeper
+    image: zookeeper:3.7.0
     restart: always
     hostname: zoo3
     ports:
