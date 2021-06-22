@@ -18,7 +18,7 @@ If you only want to see the result after running the script and don't want to co
 There are a few steps to run the scenario:
 * Install docker and docker-compose
 * Install zookeeper client c-bindings. I had some problems with [the oficial instruction](https://github.com/apache/zookeeper/blob/master/zookeeper-client/zookeeper-client-c/README), so the exact steps I did during installing may help you:
-  * Make sure that dir `zookeeper-client/zookeeper-client-c/generated` with `jute` files exists. If it's not, try to [build zookeeper](https://github.com/apache/zookeeper/blob/master/README_packaging.md) with `-Pfull-build`. Files are generated on early stage of the build, so as soon as dir created, you can stop the build. I did not find a better way to generate all these files (steps from the instruction do not work).  
+  * Make sure that dir `zookeeper-client/zookeeper-client-c/generated` with `jute` files exists. If it's not, try to [build zookeeper](https://github.com/apache/zookeeper/blob/master/README_packaging.md) with `-Pfull-build`. Files are generated on early stage of the build, so as soon as dir is created, you can stop the build. I did not find a better way to generate all these files (steps from the instruction did not work for me).  
   * go to `zookeeper-client/zookeeper-client-c` dir
   * run `autoreconf -if`
   * run `./configure --disable-shared --enable-static --without-openssl --without-sasl`
