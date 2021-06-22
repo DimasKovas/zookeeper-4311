@@ -4,7 +4,7 @@
 
 #include <bits/stdc++.h>
 
-#include <zookeeper.h>
+#include <zookeeper/zookeeper.h>
 
 using namespace std;
 

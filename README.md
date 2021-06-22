@@ -17,9 +17,15 @@ If you only want to see the result after running the script and don't want to co
 ## Running the scenario
 There are a few steps to run the scenario:
 * Install docker and docker-compose
-* Install zookeeper client c-bindings
+* Install zookeeper client c-bindings. I had some problems with [the oficial instruction](https://github.com/apache/zookeeper/blob/master/zookeeper-client/zookeeper-client-c/README), so the exact steps I did during installing may help you:
+  * Make sure that dir `zookeeper-client/zookeeper-client-c/generated` with `jute` files exists. If it's not, try to [build zookeeper](https://github.com/apache/zookeeper/blob/master/README_packaging.md) with `-Pfull-build`. Files are generated on early stage of the build, so as soon as dir created, you can stop the build. I did not find a better way to generate all these files (steps from the instruction do not work).  
+  * go to `zookeeper-client/zookeeper-client-c` dir
+  * run `autoreconf -if`
+  * run `./configure --disable-shared --enable-static --without-openssl --without-sasl`
+  * run `make`
+  * run `sudo make install`
 * Compile the client with the following command:
-`g++ -Iinclude client.cpp  libzookeeper.a libhashtable.a -o zk_cmd -pthread -DTHREADED`
-* Install CuttleFS from [GH repository](https://github.com/WiscADSL/cuttlefs). In order to allow access to mounted dir from docker, you should add the line `allow_other=True,` [here](https://github.com/WiscADSL/cuttlefs/blob/8ddc684d4fc9167778bfe1cddfbbae8a3eabe15e/cuttlefs/cli.py#L135) before installing it.
+  * `g++ client.cpp -lzookeeper_mt -DTHREADED -pthread -o zk_cmd`
+* Clone CuttleFS from [GH repository](https://github.com/WiscADSL/cuttlefs). In order to allow access to a mounted fuse dir from docker, you should add the line `allow_other=True,` [here](https://github.com/WiscADSL/cuttlefs/blob/8ddc684d4fc9167778bfe1cddfbbae8a3eabe15e/cuttlefs/cli.py#L135). Then, install CuttleFS with the instruction from the repository.
 * Run ./test.sh
 * Run ./clear.sh to stop zookeeper cluster and clear all temporary files.
